@@ -3,12 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>私のホームページ</title>
+  <title>OnikkoGames</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* === ベース === */
+    body {
+      margin: 0;
+      font-family: 'Zen Maru Gothic', Arial, sans-serif;
+      color: #000;
+      background-color: #fff;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* === ヘッダー === */
+    header {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(255, 255, 255, 0.95);
+      transition: background-color 0.3s, color 0.3s;
+      z-index: 10;
+    }
+
+    header.scrolled {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .logo-area a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 400;
+      transition: font-weight 0.2s;
+    }
+
+    nav a.active {
+      font-weight: 700;
+    }
+
+    /* === KV（メインビジュアル） === */
+    .kv {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 774px;
+      padding: 2rem 4%;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+
+    .kv-left, .kv-right {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    .kv-left img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    .title1 {
+      font-weight: 700;
+      font-size: 2rem;
+      color: #000;
+      line-height: 1.2;
+    }
+
+    .title1 span {
+      display: block;
+    }
+
+    .title2 {
+      margin-top: 1.5rem;
+      color: #000;
+    }
+
+    .title2 p {
+      margin: 0.5rem 0;
+    }
+
+    .title2 .main1 {
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+
+    .title2 .main2 {
+      font-family: 'Merriweather', Arial, serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+
+    .title2 .subtitle {
+      font-size: 0.9rem;
+    }
+
+    /* === スマホ対応 === */
+    @media (max-width: 774px) {
+      .kv {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .title1 {
+        font-size: 1.6rem;
+      }
+
+      .title2 .main1,
+      .title2 .main2 {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>ようこそ！</h1>
-  <p>ここが私のホームページです。</p>
+  <header id="site-header">
+    <div class="logo-area">
+      <img src="icon.png" alt="Logo" width="32" height="32">
+      <a href="index.html">OnikkoGames</a>
+    </div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="privacy-policy.html">PrivacyPolicy</a>
+    </nav>
+  </header>
 
-  <a href="privacy-policy.html">プライバシーポリシーはこちら</a>
+  <section class="kv">
+    <div class="kv-left">
+      <img src="gif1.gif" alt="ゲームシーン1" width="320" height="537">
+      <img src="gif2.gif" alt="ゲームシーン2" width="320" height="133">
+    </div>
+    <div class="kv-right">
+      <div class="title1">
+        <span>さあ</span>
+        <span>脱出しよう</span>
+      </div>
+      <div class="title2">
+        <p class="main1">脱出ゲーム</p>
+        <p class="main2">1room「砂漠シェルターからの脱出」</p>
+        <p class="subtitle">—ここは地球から何光年も離れたどこかの惑星—</p>
+        <p>砂漠におおわれた大地をさまよっていたあなたはシェルターにたどりつきました。さて、このシェルターからどうやってでるのかしら？</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // スクロールでヘッダーの反転
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
