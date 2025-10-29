@@ -90,6 +90,20 @@
       border-radius: 8px;
     }
 
+    .img-crop {
+  width: 320px;          /* 表示したい横幅 */
+  height: 300px;         /* 表示したい縦の範囲（トリミング後の高さ） */
+  overflow: hidden;      /* はみ出した部分を非表示 */
+}
+
+.img-crop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* 画像を中央でトリミング風に収める */
+  object-position: center;
+  display: block;
+}
+
     .title1 {
       font-weight: 700;
       font-size: 60pt;
@@ -157,8 +171,11 @@
 
   <section class="kv">
     <div class="kv-left">
+      <div class="img-crop">
       <img src="assets/gifs/gif1.gif" alt="ゲームシーン1" width="320" height="537">
+      </div>
       <img src="assets/gifs/gif2.gif" alt="ゲームシーン2" width="320" height="133">
+        
     </div>
     <div class="kv-right">
       <div class="title1">
