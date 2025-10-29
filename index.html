@@ -82,6 +82,14 @@
       max-width: 500px;
     }
 
+    .kv-right {
+  flex: 1 1 400px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
     .kv-left img {
       width: 100%;
       height: auto;
@@ -156,24 +164,24 @@
     </nav>
   </header>
 
-  <section class="kv">
-    <div class="kv-left">
-      <img src="assets/gifs/gif1.gif" alt="ゲームシーン1" width="320" height="537">
-      <img src="assets/gifs/gif2.gif" alt="ゲームシーン2" width="320" height="133">        
+<section class="kv">
+  <div class="kv-left">
+    <img src="assets/gifs/gif1.gif" alt="ゲームシーン1" width="320" height="537">
+  </div>
+  <div class="kv-right">
+    <div class="title1">
+      <span>さあ</span>
+      <span>脱出しよう</span>
     </div>
-    <div class="kv-right">
-      <div class="title1">
-        <span>さあ</span>
-        <span>脱出しよう</span>
-      </div>
-      <div class="title2">
-        <p class="main1">脱出ゲーム</p>
-        <p class="main2">1room「砂漠シェルターからの脱出」</p>
-        <p class="subtitle">—ここは地球から何光年も離れたどこかの惑星—</p>
-        <p>砂漠におおわれた大地をさまよっていたあなたはシェルターにたどりつきました。さて、このシェルターからどうやってでるのかしら？</p>
-      </div>
+    <div class="title2">
+      <p class="main1">脱出ゲーム</p>
+      <p class="main2">1room「砂漠シェルターからの脱出」</p>
+      <p class="subtitle">—ここは地球から何光年も離れたどこかの惑星—</p>
+      <p>砂漠におおわれた大地をさまよっていたあなたはシェルターにたどりつきました。さて、このシェルターからどうやってでるのかしら？</p>
     </div>
-  </section>
+    <img src="assets/gifs/gif2.gif" alt="ゲームシーン2" width="320" height="133" style="margin-top: 2rem; border-radius: 8px;">
+  </div>
+</section>
 
   <script>
     // スクロールでヘッダーの反転
