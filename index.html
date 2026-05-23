@@ -1,212 +1,413 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+  <link rel="icon" href="images/onikkogamesicon.png" type="image/x-icon" />
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OnikkoGames</title>
-  <link rel="icon" href="assets/images/onikkogamesicon.png" type="image/x-icon" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    /* === ベース === */
-    body {
-      margin: 0;
-      font-family: 'Zen Maru Gothic', Arial, sans-serif;
-      color: #000;
-      background-color: #fff;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    /* === ヘッダー === */
-    header {
-      position: sticky;
-      top: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: rgba(255, 255, 255, 0.95);
-      transition: background-color 0.3s, color 0.3s;
-      z-index: 10;
-    }
-
-    header.scrolled {
-      background-color: #000;
-      color: #fff;
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-weight: 400;
-      font-size: 1.2rem;
-    }
-
-    .logo-area a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: inherit;
-      font-weight: 400;
-      transition: font-weight 0.2s;
-    }
-
-    nav a.active {
-      font-weight: 700;
-    }
-        /* === フッター === */
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #555;
-      margin: 3rem 0 2rem 0;
-    }
-
-    /* === KV（メインビジュアル） === */
-    .kv {
-      display: flex;
-      justify-content: center;
-      align-items: start;
-      min-height: 774px;
-      padding: 2rem 4%;
-      box-sizing: border-box;
-      flex-wrap: wrap;
-      gap: 3rem;
-    }
-
-    .kv-left, .kv-right {
-      flex: 1 1 400px;
-      max-width: 500px;
-    }
-    
-   .kv-right {
-      margin-top: 5.5rem;
-    }
-    
-    .kv-right img,.kv-left img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    .title1 {
-      font-weight: 700;
-      font-size: 3.75rem;
-      color: #000;
-      line-height: 1.2;
-      margin-bottom: 5.5rem;
-    }
-
-    .title1 span {
-      display: block;
-    }
-
-    .title2 {
-      margin-top: 1.5rem;
-      color: #000;
-      margin-bottom: 2.5rem;
-    }
-
-    .title2 p {
-      margin: 0.5rem 0;
-    }
-
-    .title2 .main1 {
-      font-weight: 500;
-      font-size: 1.2rem;
-    }
-
-    .title2 .main2 {
-      font-family: 'Merriweather', Arial, serif;
-      font-weight: 300;
-      font-size: 1.1rem;
-    }
-
-    .title2 .subtitle {
-      font-size: 0.9rem;
-      margin: 2rem 0 1rem 0;
-    }
-
-    .small-txt {
-      font-size:0.6rem;
-    }
-
-    /* === スマホ対応 === */
-    @media (max-width: 774px) {
-      .kv {
-        flex-direction: column;
-        text-align: start;
-      }
-
-      .title1 {
-        font-size: 1.6rem;
-      }
-
-      .title2 .main1,
-      .title2 .main2 {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <title>ONIKKO GAMES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display&family=Silkscreen:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header id="site-header">
-    <div class="logo-area">
-      <img src="assets/images/icon.png" alt="Logo" width="32" height="32">
-      <a href="index.html">OnikkoGames</a>
+  <div class="fixed-bg"></div>
+
+  <!--------------- header --------------->
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo-white.png" alt="ONIKKO GAMES" class="logo-white">
+          <img src="images/logo-black.png" alt="ONIKKO GAMES" class="logo-black">
+        </a>
+      </div>
+
+      <button class="hamburger">
+        <span class="material-icons hamburger-icon">menu</span>
+      </button>
+
+     <nav class="nav">
+        <ul class="menu">
+
+          <li class="menu-item games">
+
+            <div class="menu-row">
+              <a href="games.html" class="games-link">
+                GAMES
+                <span class="material-icons arrow">expand_more</span>
+              </a>
+
+              <button class="accordion-toggle">
+                <span class="material-icons toggle-icon">add</span>
+              </button>
+            </div>
+
+            <ul class="submenu">
+              <li><a href="#">1room 砂漠シェルターからの脱出</a></li>
+              <li><a href="#">1room 箱舟ハイツからの脱出</a></li>
+            </ul>
+
+          </li>
+
+          <li><a href="index.html#news">NEWS</a></li>
+          <li><a href="index.html#about">ABOUT</a></li>
+          <li><a href="privacypolicy.html">PRIVACY POLICY</a></li>
+          <li><a href="index.html#contact">CONTACT</a></li>
+
+        </ul>
+      </nav>
+
     </div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="privacy-policy.html">PrivacyPolicy</a>
-    </nav>
   </header>
 
-<section class="kv">
-  <div class="kv-left">
-    <img src="assets/gifs/gif1.gif" alt="ゲームシーン1" width="320" height="537">
-    <div class="small-txt">
-    <p>※画面は開発中のイメージです。</p>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <div class="hero">
+    <div class="hero-bg hero-bg--front is-active"></div>
+    <div class="hero-bg hero-bg--back"></div>
+    <div class="hero-content">
+      <img src="images/fv_dot.png" class="hero-image" alt="">
+      <p class="hero-tagline">
+        I craft small worlds with quiet stories that stay with you.
+      </p>
+      <h1 class="hero-title">ONIKKO GAMES</h1>
+      <p class="hero-subtitle">Original Pixel Adventure Studio</p>
+    </div>
+  </div>
+  </header>
+
+
+
+  <main>
+
+    <!--------------- GAMES --------------->
+    <section id="games" class="section section-games">
+      <div class="section-header section-header--games">
+        <div class="section-header-left">
+          <h2 class="section-title">GAMES</h2>
+          <p class="section-subtitle">(ゲーム一覧)</p>
+        </div>
+        <div class="section-copy-wrapper">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9.51074 0L8.7691 7.71746L3.63289 1.90983L7.5691 8.58932L0.000177383 6.90983L7.11074 10L0.000177383 13.0902L7.5691 11.4107L3.63289 18.0902L8.7691 12.2825L9.51074 20L10.2524 12.2825L15.3886 18.0902L11.4524 11.4107L19.0213 13.0902L11.9107 10L19.0213 6.90983L11.4524 8.58932L15.3886 1.90983L10.2524 7.71746L9.51074 0Z"
+              fill="#D29A09" />
+          </svg>
+          <p class="section-copy-en">
+            This section showcases a list of games<br />
+            created by Onikko Games.<br />
+            World-building is at the core of my games.
+          </p>
+          <svg width="88" height="12" viewBox="0 0 88 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.44444 0H8L3.55556 12H0L4.44444 0Z" fill="#0D0E14" />
+            <path d="M14.4444 0H18L13.5556 12H10L14.4444 0Z" fill="#0D0E14" />
+            <path d="M24.4444 0H28L23.5556 12H20L24.4444 0Z" fill="#0D0E14" />
+            <path d="M34.4444 0H38L33.5556 12H30L34.4444 0Z" fill="#0D0E14" />
+            <path d="M44.4444 0H48L43.5556 12H40L44.4444 0Z" fill="#0D0E14" />
+            <path d="M54.4444 0H58L53.5556 12H50L54.4444 0Z" fill="#0D0E14" />
+            <path d="M64.4444 0H68L63.5556 12H60L64.4444 0Z" fill="#0D0E14" />
+            <path d="M74.4444 0H78L73.5556 12H70L74.4444 0Z" fill="#0D0E14" />
+            <path d="M84.4444 0H88L83.5556 12H80L84.4444 0Z" fill="#0D0E14" />
+          </svg>
+        </div>
       </div>
-  </div>
-  <div class="kv-right">
-    <div class="title1">
-      <span>さあ、</span>
-      <span>脱出しよう</span>
+
+      <div class="games-list">
+        <article class="game-card">
+          <a href="#">
+            <div class="game-thumb game-thumb--1">
+              <div class="game-thumb game-thumb--2">
+                <span class="thumb-icon material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </div>
+            </div>
+
+            <div class="game-body">
+              <div class="game-meta">
+              </div>
+
+              <h3 class="game-title">サンプル・オーバーグロウンの施設跡</h3>
+              <p class="game-desc">
+                忘れられた研究施設を舞台にした2Dアクションアドベンチャー。
+                ドット絵と重めのBGMで、どこか寂しい世界を探索します。
+              </p>
+              <span class="game-tag">#脱出ゲーム</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="game-card">
+          <a href="#">
+            <div class="game-thumb game-thumb--2">
+              <div class="game-thumb game-thumb--2">
+                <span class="thumb-icon material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </div>
+            </div>
+            <div class="game-body">
+              <div class="game-meta">
+              </div>
+              <h3 class="game-title">サンプル・メトロイドライクの遺構</h3>
+              <p class="game-desc">
+                広大な遺構を舞台に、ガジェットを集めて攻略ルートを切り開く、
+                メトロイドヴァニアタイプの探索ゲームです。
+              </p>
+              <span class="game-tag">#脱出ゲーム</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="game-card">
+          <a href="#">
+            <div class="game-thumb game-thumb--3">
+              <div class="game-thumb game-thumb--2">
+                <span class="thumb-icon material-symbols-outlined">
+                  arrow_forward
+                </span>
+              </div>
+            </div>
+            <div class="game-body">
+              <div class="game-meta">
+              </div>
+              <h3 class="game-title">サンプル・ロボと犬の工場脱出</h3>
+              <p class="game-desc">
+                喋るロボと犬のコンビが廃工場からの脱出を目指す、
+                パズル要素強めの横スクロールアクション。
+              </p>
+              <span class="game-tag">#脱出ゲーム</span>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <div class="games-more">
+        <a href="games.html" class="button">
+          <span class="button-text">veiw more</span>
+          <span class="button-icon material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+
+    </section>
+
+
+
+    <!--------------- text_animation --------------->
+
+    <div class="loop-wrap">
+      <ul class="loop-area">
+        <li class="content">ONIKKO GAMES</li>
+        <li class="content">ONIKKO GAMES</li>
+        <li class="content">ONIKKO GAMES</li>
+        <li class="content">ONIKKO GAMES</li>
+      </ul>
+      <ul class="loop-area">
+        <li class="content">ONIKKO GAMES</li>
+        <li class="content">ONIKKO GAMES</li>
+        <li class="content">ONIKKO GAMES</li>
+        <li class="content">ONIKKO GAMES</li>
+      </ul>
     </div>
-    <div class="title2">
-      <p class="main1">脱出ゲーム</p>
-      <p class="main2">1room「砂漠シェルターからの脱出」</p>
-      <p class="subtitle">—ここは地球から何光年も離れたどこかの惑星—</p>
-      <p>砂漠におおわれた大地をさまよっていたあなたはシェルターにたどりつきました。さて、このシェルターからどうやってでるのかしら？</p>
+
+
+
+    <!--------------- NEWS --------------->
+
+    <section id="news" class="section section-news">
+      <div class="section-header">
+        <h2 class="section-title">NEWS</h2>
+        <p class="section-subtitle">(お知らせ)</p>
+      </div>
+
+      <ul class="news-list">
+        <li class="news-item">
+          <a href="#">
+            <span class="news-date">2025.12.01</span>
+
+            <div class="news-body">
+              <span class="news-title">
+                インディーゲームイベント「XXX」に出展します
+              </span>
+
+              <p class="news-text">
+                新作脱出ゲームを「XX」を本日公開しました。本作は「鏡に映らないものを見つけ出す」というユニークなギミックを中心に展開する謎解きゲームです。映像では、プレイヤーが鏡の世界を行き来しながら仕掛けを解き明かすシーンの一部を紹介しています。正式なリリース日は後日発表予定です。
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="news-item">
+          <a href="#">
+            <span class="news-date">2025.12.01</span>
+
+            <div class="news-body">
+              <span class="news-title">
+                インディーゲームイベント「XXX」に出展します
+              </span>
+
+              <p class="news-text">
+                新作脱出ゲームを「XX」を本日公開しました。本作は「鏡に映らないものを見つけ出す」というユニークなギミックを中心に展開する謎解きゲームです。映像では、プレイヤーが鏡の世界を行き来しながら仕掛けを解き明かすシーンの一部を紹介しています。正式なリリース日は後日発表予定です。
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="news-item">
+          <a href="#">
+            <span class="news-date">2025.12.01</span>
+
+            <div class="news-body">
+              <span class="news-title">
+                インディーゲームイベント「XXX」に出展します
+              </span>
+
+              <p class="news-text">
+                新作脱出ゲームを「XX」を本日公開しました。本作は「鏡に映らないものを見つけ出す」というユニークなギミックを中心に展開する謎解きゲームです。映像では、プレイヤーが鏡の世界を行き来しながら仕掛けを解き明かすシーンの一部を紹介しています。正式なリリース日は後日発表予定です。
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <div class="section-copy-en-wrap">
+          <p class="section-copy-en">
+            This section contains the latest information<br />
+            about Onikko Games.<br />
+          </p>
+
+          <div class="section-divider">
+            <svg width="63" height="16" viewBox="0 0 63 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6.5 0L5.71884 4.70386C5.52333 5.88115 4.6486 6.8306 3.49124 7.12174L4.76837e-07 8L3.49125 8.87826C4.6486 9.1694 5.52333 10.1188 5.71884 11.2961L6.5 16L7.28116 11.2961C7.47667 10.1188 8.3514 9.1694 9.50876 8.87826L13 8L9.50875 7.12174C8.3514 6.8306 7.47667 5.88115 7.28116 4.70386L6.5 0Z"
+                fill="#0D0E14" />
+              <path
+                d="M31.5 0L30.7188 4.70386C30.5233 5.88115 29.6486 6.8306 28.4912 7.12174L25 8L28.4912 8.87826C29.6486 9.1694 30.5233 10.1188 30.7188 11.2961L31.5 16L32.2812 11.2961C32.4767 10.1188 33.3514 9.1694 34.5088 8.87826L38 8L34.5088 7.12174C33.3514 6.8306 32.4767 5.88115 32.2812 4.70386L31.5 0Z"
+                fill="#0D0E14" />
+              <path
+                d="M56.5 0L55.7188 4.70386C55.5233 5.88115 54.6486 6.8306 53.4912 7.12174L50 8L53.4912 8.87826C54.6486 9.1694 55.5233 10.1188 55.7188 11.2961L56.5 16L57.2812 11.2961C57.4767 10.1188 58.3514 9.1694 59.5088 8.87826L63 8L59.5088 7.12174C58.3514 6.8306 57.4767 5.88115 57.2812 4.70386L56.5 0Z"
+                fill="#0D0E14" />
+            </svg>
+            <div class="line"></div>
+          </div>
+        </div>
+    </section>
+
+
+
+    <!--------------- hole --------------->
+
+    <section class="image-hole-section">
+      <div class="image-layer">
+        <img src="images/dot_hole_left.png" class="hole-image-left" alt="">
+        <img src="images/dot_hole_right.png" class="hole-image-right" alt="">
+      </div>
+    </section>
+
+
+
+    <!------------ ABOUT ------------>
+
+    <section id="about" class="section section-about">
+      <div class="section-header">
+        <h2 class="section-title">ABOUT</h2>
+        <p class="section-subtitle">(Onikko Gamesについて)</p>
+      </div>
+
+      <div class="about-content">
+        <div class="avatar-circle">
+          <img src="images/profile.png" alt="Avatar" />
+        </div>
+
+        <div class="about-text">
+          <h3 class="about-name">Onikko Games</h3>
+          <p class="about-desc">
+            世界観と雰囲気を大事にするゲームクリエーター。
+            個人でゲーム開発を行っています。
+          </p>
+
+          <div class="button-group">
+            <a href="https://play.google.com/store/apps/dev?id=9211715500099647296" class="store-link" target="_blank"
+              rel="noopener noreferrer">
+              <img src="images/GetItOnGooglePlay_Badge_Web_color_Japanese.png" alt="Google Playで見る">
+            </a>
+            <a href="https://x.com/OnikkoGames" target="_blank" rel="noopener noreferrer" class="x-button">
+              <img src="images/x-logo-white.png" alt="X">
+            </a>
+            <a href="https://note.com/onikko_games" target="_blank" rel="noopener noreferrer" class="note-button">
+              <img src="images/note_icon.png" alt="note">
+            </a>
+            <a href="#" class="button button--secondary">
+              <span class="button-text">BOOTH</span>
+              <span class="button-icon material-symbols-outlined">arrow_outward</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!------------- CONTACT ------------->
+
+    <section id="contact" class="section section-contact">
+      <div class="contact-inner">
+        <h2 class="contact-title">CONTACT</h2>
+
+        <p class="contact-text">
+          （contactの目的を入れる）お仕事のご依頼・ご相談、また外部パートナーとしての
+          お誘いなどにつきましては、<br />
+          下記のContactボタンまたはメールアドレス宛にお問い合わせください。
+        </p>
+
+        <p class="contact-email">
+          <a href="mailto:onikkogames@gmail.com">
+            <span class="mail-icon material-symbols-outlined">mail</span>
+            <span class="mail-text">onikkogames@gmail.com</span>
+          </a>
+        </p>
+
+        <a href="#" class="button">
+          <span class="button-text">contact</span>
+          <span class="button-icon material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+
+      <img src="images/dot_hole_left.png" class="contact-img-left" alt="">
+      <img src="images/dot_hole_right.png" class="contact-img-right" alt="">
+
+    </section>
+  </main>
+
+
+
+  <!--------------- FOOTER --------------->
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <a href="index.html">OnikkoGames</a>
+      </div>
+      <div class="footer-nav">
+        <a href="#games">GAMES</a>
+        <a href="#news">NEWS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </div>
     </div>
-    <img src="assets/gifs/gif2.gif" alt="ゲームシーン2" width="320" height="133" style="margin-top: 2rem; border-radius: 8px;">
-  </div>
-</section>
-  <footer>
-    © 2025 OnikkoGames
   </footer>
 
-  <script>
-    // スクロールでヘッダーの反転
-    const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-  </script>
+  <script src="script.js"></script>
+
 </body>
+
 </html>
