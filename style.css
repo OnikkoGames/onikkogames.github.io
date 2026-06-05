@@ -11,7 +11,7 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
       "Segoe UI", sans-serif;
     color: #111;
-
+    overflow-x: hidden;
   }
 
   h1,
@@ -419,7 +419,7 @@
   }
 
   .hero-title {
-    font-size: clamp(2.4rem, calc((100vw - 64px) / 12), 8.3rem);
+    font-size: clamp(1.6rem, calc((100vw - 64px) / 12), 8.3rem);
     font-weight: 900;
     margin: 0 0 4px;
     white-space: nowrap;
@@ -930,6 +930,48 @@
     gap: 24px;
   }
 
+
+  .note-button-mini {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .note-button-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .note-button-mini:hover {
+    opacity: 0.7;
+  }
+
+  .x-button-mini {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .x-button-mini img {
+    width: 50%;
+    height: auto;
+  }
+
+  .x-button-mini:hover {
+    opacity: 0.7;
+  }
+
   /* ========== CONTACT ========== */
 
   .section-contact {
@@ -997,7 +1039,7 @@
   }
 
   .section-contact .contact-email a .mail-text {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .section-contact .contact-email a .mail-icon {
@@ -1015,11 +1057,29 @@
     color: #ffffff;
   }
 
+  .contact-link-white .button-text {
+    font-size: 16px;
+    position: relative;
+  }
+
+  .contact-link-white .button-icon,
+  .contact-link-white .button-text {
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+
+  .contact-link-white:hover .button-icon,
+  .contact-link-white:hover .button-text {
+    color: #ffffff;
+    opacity: 0.8;
+  }
+
   .section-contact .contact-email a .mail-text {
     position: relative;
   }
 
-  .section-contact .contact-email a .mail-text::after {
+  .section-contact .contact-email a::after,
+  .contact-link-white::after {
     content: "";
     position: absolute;
     left: 0;
@@ -1032,8 +1092,13 @@
     transition: transform 0.3s ease;
   }
 
-  .section-contact .contact-email a:hover .mail-text::after {
+  .section-contact .contact-email a:hover::after,
+  .contact-link-white:hover::after {
     transform: scaleX(1);
+  }
+
+  .contact-link-white .button-icon {
+    margin-left: -12px;
   }
 
   .section-contact .contact-email a span,
@@ -1044,6 +1109,14 @@
 
   .section-contact .contact-email a:hover::before {
     transform: scaleX(1);
+  }
+
+  .contact-link-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    position: relative;
   }
 
   .section-contact .contact-email a:hover {
@@ -1073,26 +1146,39 @@
 
   /* ========== FOOTER ========== */
 
+  .site-footer *:last-child {
+    margin-bottom: 0;
+  }
+
   .site-footer {
     background: #0D0E14;
     color: #F6F7F5;
-    height: 100px;
     align-items: center;
     display: flex;
     border-radius: 10px 10px 0 0;
+    padding: 40px 32px;
   }
 
   .footer-inner {
     width: 100%;
-    padding: 0 32px;
+  }
+
+  .footer-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 24px;
   }
 
   .footer-logo {
     font-size: 36px;
     font-weight: 700;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .footer-nav {
@@ -1111,7 +1197,6 @@
   .footer-nav a:hover {
     color: #D29A09;
   }
-
 
   .site-header.menu-open .hamburger .material-icons {
     color: #0D0E14;
@@ -1190,12 +1275,19 @@
       sans-serif;
   }
 
-  .gl-links {
+  .linksGroup {
     margin-top: 16px;
     display: flex;
-    gap: 16px;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    gap: 16px;
     margin-bottom: 24px;
+  }
+
+  .gl-links {
+    display: flex;
+    gap: 16px;
   }
 
   .gl-store img {
@@ -1343,6 +1435,7 @@
   .site-header.menu-open {
     color: #0D0E14;
   }
+
 
   /*--------------------policy---------------------*/
   .policy-content {
@@ -1587,13 +1680,22 @@
     .site-footer {
       height: auto;
       border-radius: 20px 20px 0 0;
+      padding: 0;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 24px;
+      margin-bottom: 32px;
     }
 
     .footer-inner {
       padding: 40px 16px;
       flex-direction: column;
       align-items: flex-start;
-      gap: 20px;
       height: auto;
     }
 
@@ -1601,6 +1703,10 @@
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .footer-links {
       gap: 12px;
     }
 
@@ -1635,6 +1741,11 @@
 
     .page-games .section-header {
       gap: 0;
+    }
+
+    .linksGroup {
+      flex-direction: column;
+      gap: 8px;
     }
   }
 
